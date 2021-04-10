@@ -30,9 +30,8 @@ const UserSchema = new Schema ({
         }
     ]
     },
-     // Set the `toJSON` schema option to use virtuals
-  // Set the `id` as false
-  // YOUR CODE HERE
+        // Set the `toJSON` schema option to use virtuals
+        // Set the `id` as false
   {
     toJSON: {
       virtuals: true
@@ -46,3 +45,6 @@ UserSchema.virtual("friendCount").get(function(){
     return this.friends.length;
   });
 
+const User = model('User', UserSchema);
+
+  module.exports = User;
