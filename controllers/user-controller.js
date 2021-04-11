@@ -1,5 +1,5 @@
 // Import User model
-const { User, Thought } = require('../models');
+const { User} = require('../models');
 
 const UserController = {
     // get all users method will serve as callback function for the GET /api/users route.
@@ -109,5 +109,5 @@ const UserController = {
 };
   
    
-
-module.exports = userController;
+// Export user controller
+module.exports = UserController;
