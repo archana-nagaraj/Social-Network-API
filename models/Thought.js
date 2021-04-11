@@ -41,6 +41,7 @@ const ThoughtSchema = new Schema ({
         // Set default value to the current timestamp
         default: Date.now,
         // Use a getter method to format the timestamp on query
+
        
     },
 
