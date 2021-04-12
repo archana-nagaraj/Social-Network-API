@@ -29,58 +29,60 @@
 [Walkthrough video demonstarting Post/delete friend Endpoints](https://drive.google.com/file/d/1gFZL8bSx0KnqCPzLBaho8rgM8PfCQ2_p/view)
 
 ### Models
-    - User
-    - Thought
-    - Reaction (used as a subdocument in Thought)
+    User
+    Thought
+    Reaction (used as a subdocument in Thought)
 
 ### Endpoints
     **User**
-    - Get all users:        GET /api/users
-    - Create a user:        POST /api/users
-    - Get user by ID:       GET /api/users/:id
-    - Update a user:        PUT /api/users/:id
-    - Delete a user:        DELETE /api/users/:id
+    Get all users:        GET /api/users
+    Create a user:        POST /api/users
+    Get user by ID:       GET /api/users/:id
+    Update a user:        PUT /api/users/:id
+    Delete a user:        DELETE /api/users/:id
 
     **Friend**
-    - Add a friend:         PUT /api/users/:userId/friends/:friendId
-    - Delete a friend:      DELETE /api/users/:userId/friends/:friendId
+    Add a friend:         PUT /api/users/:userId/friends/:friendId
+    Delete a friend:      DELETE /api/users/:userId/friends/:friendId
 
     **Thought**
-    - Get all thoughts:     GET /api/thoughts
-    - Create a thought:     POST /api/thoughts
-    - Get thought by ID:    GET /api/thoughts/:id
-    - Update a thought:     PUT /api/thoughts/:id
-    - Delete a thought:     DELETE /api/thoughts/:id
+    Get all thoughts:     GET /api/thoughts
+    Create a thought:     POST /api/thoughts
+    Get thought by ID:    GET /api/thoughts/:id
+    Update a thought:     PUT /api/thoughts/:id
+    Delete a thought:     DELETE /api/thoughts/:id
 
     **Reaction**
-    - Add a reaction:       PUT /api/thoughts/:id/reactions
-    - Delete a reaction:    DELETE /api/thoughts/:id/reactions
+    Add a reaction:       PUT /api/thoughts/:id/reactions
+    Delete a reaction:    DELETE /api/thoughts/:id/reactions
 
 
 ## Technologies/Packages
-    * Node.js, Express.js, mongoose, mongodb
+    Node.js
+    Express.js
+    mongoose
+    mongodb
 
 
 ## Installation
-    * Ensure to have [MongoDB](https://www.mongodb.com/) installed on your machine 
+* Ensure to have [MongoDB](https://www.mongodb.com/) installed on your machine 
 
-    * Git clone the repo 
+* Git clone the repo 
 
-    * Install npm by running the following in terminal
-        - npm install
+* Install npm by running the following in terminal
+    - npm install
 
-    * Run the app
-        npm start
+* Run the app
+    npm start
 
 ### Usage
-    This project demonstrates the database for a social networking application. Use your browser or an app like [Insomnia](https://insomnia.rest/) to test the REST API or Endpoints.
+This project demonstrates the database for a social networking application. Use your browser or an app like [Insomnia](https://insomnia.rest/) to test the REST API or Endpoints.
 
 ### Tests
-    There are no tests for this application
+There are no tests for this application
 
 ### License
-
-    This repository is licensed under the [Apache license](./LICENSE).
+This repository is licensed under the [Apache license](./LICENSE).
 
 
 ## Questions
