@@ -35,35 +35,33 @@
 
 ### Endpoints
     **User**
-    - Get all users:        `GET /api/users`
-    - Create a user:        `POST /api/users`
-    - Get user by ID:       `GET /api/users/:id`
-    - Update a user:        `PUT /api/users/:id`
-    - Delete a user:        `DELETE /api/users/:id`
+    - Get all users:        GET /api/users
+    - Create a user:        POST /api/users
+    - Get user by ID:       GET /api/users/:id
+    - Update a user:        PUT /api/users/:id
+    - Delete a user:        DELETE /api/users/:id
 
     **Friend**
-    - Add a friend:         `PUT /api/users/:userId/friends/:friendId`
-    - Delete a friend:      `DELETE /api/users/:userId/friends/:friendId`
+    - Add a friend:         PUT /api/users/:userId/friends/:friendId
+    - Delete a friend:      DELETE /api/users/:userId/friends/:friendId
 
     **Thought**
-    - Get all thoughts:     `GET /api/thoughts`
-    - Create a thought:     `POST /api/thoughts`
-    - Get thought by ID:    `GET /api/thoughts/:id`
-    - Update a thought:     `PUT /api/thoughts/:id`
-    - Delete a thought:     `DELETE /api/thoughts/:id`
+    - Get all thoughts:     GET /api/thoughts
+    - Create a thought:     POST /api/thoughts
+    - Get thought by ID:    GET /api/thoughts/:id
+    - Update a thought:     PUT /api/thoughts/:id
+    - Delete a thought:     DELETE /api/thoughts/:id
 
     **Reaction**
-    - Add a reaction:       `PUT /api/thoughts/:id/reactions`
-    - Delete a reaction:    `DELETE /api/thoughts/:id/reactions`
+    - Add a reaction:       PUT /api/thoughts/:id/reactions
+    - Delete a reaction:    DELETE /api/thoughts/:id/reactions
 
 
 ## Technologies/Packages
-
     * Node.js, Express.js, mongoose, mongodb
 
 
 ## Installation
-
     * Ensure to have [MongoDB](https://www.mongodb.com/) installed on your machine 
 
     * Git clone the repo 
