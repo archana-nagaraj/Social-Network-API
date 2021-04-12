@@ -1,9 +1,9 @@
-// Import User model
-const { User} = require('../models');
+// Importing User model
+const { User } = require('../models');
 
-const UserController = {
-    // get all users method will serve as callback function for the GET /api/users route.
-    // It uses the Mongoose .find() method, much like the Sequelize .findAll() method.
+// controller for User
+const userController = {
+    // Get all users 
     getAllUsers(req, res) {
         User.find({})
             // populating thoughts
@@ -24,34 +24,34 @@ const UserController = {
                 res.status(500).json(err);
             });
     },
-
-    getUserById(req, res) {
+    
+    // Get user by id
+    getUserById({ params}, res) {
         User.findOne({_id: params.id })
-        .populate({
-            path: 'thoughts',
-            select: '-__v'
-        })
-        .populate({
-            path: 'friends',
-            select: '-__v'
-        })
-        .select('-__v')
-        // return if no user is found 
-        .then(dbUserData => {
-            if(!dbUserData) {
-                res.status(404).json({ message: 'No User found with this id!'});
-                return; 
-            }
-            res.json(dbUserData)
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(400).json(err)
-        })
+            .populate({
+                path: 'thoughts',
+                select: '-__v'
+            })
+            .populate({
+                path: 'friends',
+                select: '-__v'
+            })
+            .select('-__v')
+            // return if no user is found 
+            .then(dbUserData => {
+                if(!dbUserData) {
+                    res.status(404).json({ message: 'No User found with this id!'});
+                    return; 
+                }
+                res.json(dbUserData)
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(400).json(err)
+            })
     },
 
-    // createUser method to handle POST /api/Users 
-    // In Mongoose we use the method .create() to create data
+    // Create a new user 
     createUser({ body }, res) {
         User.create(body)
             .then(dbUserData => res.json(dbUserData))
@@ -71,8 +71,31 @@ const UserController = {
             .catch(err => res.status(400).json(err))
     },
 
-      // Find user and delete 
-      deleteUser({ params }, res) {
+    // Adding friend to friend's list 
+    addFriend({ params }, res) {
+        User.findOneAndUpdate(
+            { _id: params.id },
+            { $push: { friends: params.friendId }},
+            { new: true, runValidators: true }
+        )
+        .populate({
+            path: 'friends',
+            select: ('-__v')
+        })
+        .select('-__v')
+        .then(dbUserData => {
+            if (!dbUserData) {
+                res.status(404).json({ message: 'No User found with this id!' });
+                return;
+            }
+            res.json(dbUserData);
+            })
+            .catch(err => res.json(err));
+        
+    },
+
+    // Find user and delete 
+    deleteUser({ params }, res) {
         User.findOneAndDelete({ _id: params.id })
             .then(dbUserData => {
                 if(!dbUserData) {
@@ -84,8 +107,8 @@ const UserController = {
             .catch(err => res.status(400).json(err));
     },
 
-       // Deleting friend from friend's list 
-       deleteFriend({ params }, res) {
+    // Deleting friend from friend's list 
+    deleteFriend({ params }, res) {
         User.findOneAndUpdate(
             { _id: params.id }, 
             { $pull: { friends: params.friendId }},
@@ -105,9 +128,7 @@ const UserController = {
         })
         .catch(err => res.status(400).json(err));
     }
-
 };
-  
-   
-// Export user controller
-module.exports = UserController;
+
+// Exporting controller 
+module.exports = userController; 

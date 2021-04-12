@@ -1,5 +1,6 @@
-const { Schema, model } = require('mongoose');
-//import { format, formatDistance, formatRelative, subDays } from 'date-fns'
+const { Schema, model, Types } = require('mongoose');
+const moment = require('moment');
+
 
 // Reaction Subdocument in Thought model.
 const ReactionSchema = new Schema ({
@@ -22,10 +23,11 @@ const ReactionSchema = new Schema ({
         // Set default value to the current timestamp
         default: Date.now,
         // Use a getter method to format the timestamp on query
-
+        get: (createdAtVal) => moment(createdAtVal).format('MMM DD, YYYY [at] hh:mm a')
     }
 });
 
+//  Thought Schema 
 const ThoughtSchema = new Schema ({
     thoughtText : {
         type: String,
@@ -41,8 +43,7 @@ const ThoughtSchema = new Schema ({
         // Set default value to the current timestamp
         default: Date.now,
         // Use a getter method to format the timestamp on query
-
-       
+        get: (createdAtVal) => moment(createdAtVal).format('MMM DD, YYYY [at] hh:mm a')
     },
 
     username : {

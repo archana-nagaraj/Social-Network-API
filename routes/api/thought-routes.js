@@ -1,31 +1,36 @@
 const router = require('express').Router();
-const {
-    getAllThoughts, // GET to get all thoughts
-    getThoughtById, // GET to get a single thought by its _id
-    createThought, // POST to create a new thought
-    updateThought,  // PUT to update a thought by its _id
-    deleteThought, // DELETE to remove a thought by its _id
-    addReaction, // POST to create a reaction stored in a single thought's reactions array field
-    deleteFriend // DELETE to remove a friend from a user's friend list
-  } = require('../../controllers/thought-controller');
 
-// Set up GET all and POST at /api/users
-router
-  .route('/')
-  .get(getAllUsers)
-  .post(createUser);
+// Importing functions from thought controller
+const { 
+    getAllThoughts, 
+    getThoughtById, 
+    createThought, 
+    updateThought,
+    addReaction,
+    deleteThought,
+    deleteReaction
+} = require('../../controllers/thought-controller');
 
-// Set up GET one, PUT, and DELETE at /api/users/:id
-router
-  .route('/:id')
-  .get(getUserById)
-  .put(updateUser)
-  .delete(deleteUser);
+// /api/thoughts
+router.route('/')
+      .get(getAllThoughts);
 
-  // Setup add Friend and delete Friend at /api/users/:userId/friends/:friendId
-router
-.route('/:id/friends/:friendId')
-.put(addFriend)
-.delete(deleteFriend)
+// /api/thoughts/:id
+router.route('/:id')
+      .get(getThoughtById)
+      .put(updateThought)
+      .delete(deleteThought); 
+
+// /api/thoughts/:userId
+router.route('/:userId')    
+      .post(createThought);
+
+// /api/thoughts/:thoughtId/reactions
+router.route('/:thoughtId/reactions')
+      .post(addReaction);
+
+// /api/thoughts/:thoughtId/reactionId
+router.route('/:thoughtId/reactions/:reactionId')
+      .delete(deleteReaction);
 
 module.exports = router;
