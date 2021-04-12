@@ -7,7 +7,7 @@ const {
     deleteUser, // DELETE to remove user by its _id
     addFriend, // POST to add a new friend to a user's friend list
     deleteFriend // DELETE to remove a friend from a user's friend list
-  } = require('../../controllers/user-controller.js');
+  } = require('../../controllers/user-controller');
 
 // Set up GET all and POST at /api/users
 router

@@ -1,50 +1,48 @@
 const { Schema, model } = require('mongoose');
+//const moment = require('moment');
 
-const UserSchema = new Schema ({
-    username : {
+const UserSchema = new Schema({
+        username: {
         type: String,
         unique: true,
-        trim: true,
-        required: "You must enter a username"
+        required: true,
+        trim: true
     },
-    
-    email: {
+        email: {
         type: String,
-        trim: true,
-        unique: true,
-        match : [/.+\@.+\..+/, "Please use a valid email"],
-        required: "You must enter a email"
+        unique: true, 
+        required: true,
+        // match a valid email address
+        match: [/.+\@.+\..+/]
     },
-
-    thoughts: [
+        // subdocument for thoughts 
+        thoughts: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Thought'  // The ref property is especially important because it tells the Pizza model which documents to search to find the right comments.
+            // referring to the thought document model 
+            ref: 'Thought'
         }
-    ],
-
-    friends: [
+        ],
+        friends: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'User'  // The ref property is especially important because it tells the Pizza model which documents to search to find the right comments.
+            // referring to the user document model 
+            ref: 'User'
         }
-    ]
+        ]
     },
-        // Set the `toJSON` schema option to use virtuals
-        // Set the `id` as false
-  {
+{
     toJSON: {
-      virtuals: true
+        virtuals: true
     },
-    id : false,
-  })
+    id: false
+});
 
-
-// Create a virtual called friendCount that retrieves the length of the user's friends array field on query.
-UserSchema.virtual("friendCount").get(function(){
+// virtual to count friends
+UserSchema.virtual('friendCount').get(function() {
     return this.friends.length;
-  });
+});
 
 const User = model('User', UserSchema);
 
-  module.exports = User;
+module.exports = User;
