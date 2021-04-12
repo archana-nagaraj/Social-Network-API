@@ -20,7 +20,13 @@
 
 
 ## Demonstration 
-https://drive.google.com/file/d/1jR-PqHA14y0dYNfbN-IRJHvXYcdVVi2u/view
+[Walkthrough video demonstarting technical acceptance and starting the application server](https://drive.google.com/file/d/1jR-PqHA14y0dYNfbN-IRJHvXYcdVVi2u/view)
+
+[Walkthrough video demonstarting Get/Post/Put/delete User and Thought Endpoints](https://drive.google.com/file/d/1QrDAGAHbUDpnxDkNqOeW1NM3VFlfxnv9/view)
+
+[Walkthrough video demonstarting Put/delete reaction Endpoints](https://drive.google.com/file/d/1QcMn5DA9sDO6xktUSrh47qGiH_wukvmu/view)
+
+[Walkthrough video demonstarting Post/delete friend Endpoints](https://drive.google.com/file/d/1gFZL8bSx0KnqCPzLBaho8rgM8PfCQ2_p/view)
 
 ### Models
     - User
@@ -34,6 +40,8 @@ https://drive.google.com/file/d/1jR-PqHA14y0dYNfbN-IRJHvXYcdVVi2u/view
     - Get user by ID:       `GET /api/users/:id`
     - Update a user:        `PUT /api/users/:id`
     - Delete a user:        `DELETE /api/users/:id`
+
+    **Friend**
     - Add a friend:         `PUT /api/users/:userId/friends/:friendId`
     - Delete a friend:      `DELETE /api/users/:userId/friends/:friendId`
 
