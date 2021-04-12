@@ -11,7 +11,7 @@
 
 * [Description](#description)
 * [Demonstration](#demonstartion)
-* [Technologies](#technologies)
+* [Technologies/Packages](#technologies/packages)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Tests](#tests)
