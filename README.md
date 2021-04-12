@@ -11,7 +11,7 @@
 
 * [Description](#description)
 * [Demonstration](#demonstartion)
-* [Technologies/Packages](#technologies/packages)
+* [Technologies](#technologies)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Tests](#tests)
@@ -57,7 +57,7 @@
     Delete a reaction:    DELETE /api/thoughts/:id/reactions
 
 
-## Technologies/Packages
+## Technologies
     Node.js
     Express.js
     mongoose
