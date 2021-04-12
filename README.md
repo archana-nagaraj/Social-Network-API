@@ -24,7 +24,7 @@
 
 [Walkthrough video demonstarting Get/Post/Put/delete User and Thought Endpoints](https://drive.google.com/file/d/1QrDAGAHbUDpnxDkNqOeW1NM3VFlfxnv9/view)
 
-[Walkthrough video demonstarting Put/delete reaction Endpoints](https://drive.google.com/drive/u/0/folders/1ImmAOzh0pb2NRJrS6SFQL0FdN6771rDg)
+[Walkthrough video demonstarting Put/delete reaction Endpoints](https://drive.google.com/file/d/1QcMn5DA9sDO6xktUSrh47qGiH_wukvmu/view?usp=sharing)
 
 [Walkthrough video demonstarting Post/delete friend Endpoints](https://drive.google.com/file/d/1gFZL8bSx0KnqCPzLBaho8rgM8PfCQ2_p/view)
 
